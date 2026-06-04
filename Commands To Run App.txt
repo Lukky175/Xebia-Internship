@@ -1,0 +1,83 @@
+// To Build and Run This Application You must be on Linux Environment With Docker Installed
+
+//First Install Docker Then Download ZIP of this repo or Pull the repo
+
+//To run The Application you Just Need One Command
+docker compose up --build
+
+// To stop the application
+docker-compose down
+or
+docker-compose down -v (To also Delete Docker Volume)
+
+
+
+
+
+
+
+// To manuall Run This Project Without Docker
+
+//For Backend
+cd backend
+npm init -y  //(To install package.json)
+cd backend
+npm install
+sudo systemctl start mongod   //start mongodb
+node server.js
+
+
+// For Frontend
+cd frontend
+npm init -y
+npm install
+
+
+cd webapp3tier
+cd backend
+npm start
+
+
+//To check Entries of MongoDB
+
+cd webapp3tier
+cd backend
+sudo systemctl start mongod
+
+mongosh
+show dbs
+use loginApp
+show collections
+db.users.find().pretty()
+
+
+
+
+
+
+
+
+
+
+Status Code	Meaning
+200	OK (success)
+201	Created
+400	Bad Request
+401	Unauthorized
+404	Not Found
+500	Server Error
+
+
+
+
+
+
+
+// To check MongoDB entries
+docker exec -it mongo mongosh
+show dbs
+use loginApp
+show collections
+db.users.find().pretty()
+
+//To Clear All Entries
